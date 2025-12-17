@@ -42,7 +42,7 @@ export default function DataTable({ type }) {
       if (ordering) url.searchParams.set("ordering", ordering);
       if (isGlobal) url.searchParams.set("is_global", isGlobal);
 
-      if (search.length == 0 || search.length >= 3) {  // lamin updated
+      if (search.length == 0 || search.length >= 3) {
         const res = await fetch(url);
         const data = await res.json();
 
@@ -81,7 +81,7 @@ export default function DataTable({ type }) {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (searchQuery !== search) {  // lamin updated
+      if (searchQuery !== search) {
         params.set("search", searchQuery);
         params.set("offset", 0);
         setParams(params);
@@ -279,7 +279,7 @@ export default function DataTable({ type }) {
             Create
           </Button>
 
-          <a href={`http://127.0.0.1:8000/api/items/export-csv/${window.location.search}`} // lamin updated
+          <a href={`http://127.0.0.1:8000/api/items/export-csv/${window.location.search}`}
             download style={{ textDecoration: "none", flexShrink: 0, minWidth: "auto" }}>
             <Button
               variant="outlined"
